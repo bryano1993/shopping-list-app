@@ -92,3 +92,20 @@ editor component
 ---------------------------------
 
 refractor some code
+
+----------------------------------
+Heroku Deployment
+
+
+
+heroku build shopping-list-bryan
+heroku buildpacks:set https://github.com/AdmitHub/meteor-buildpack-horse.git
+heroku addons:create mongolab:sandbox
+
+ heroku addons:create mongolab
+Creating mongolab on shopping-list-bryan... free
+Welcome to mLab.  Your new subscription is being created and will be available shortly.  Please consult the mLab Add-on Admin UI to check on its progress.
+Created mongolab-shallow-12121 as MONGODB_URI
+Use heroku addons:docs mongolab to view documentation
+
+heroku config:set ROOT_URL="https://shopping-list-bryan.herokuapp.com"
