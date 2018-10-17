@@ -45,3 +45,5 @@ For the backend I used JavaScript and Meteor. I also used MongoDb for my databas
 ## Description of the problem and solution.
 
 A problem I had was writing tests for my components and files because testing is a weak point of mine. To resolve the problem I decided to look up different methods of testing and decided which method of testing was most suitable.
+
+If I were to spend additional time on the project I would implement marked as purchase and unmark as purchase features. I ran out of time and could not implement these features.

@@ -109,3 +109,47 @@ Created mongolab-shallow-12121 as MONGODB_URI
 Use heroku addons:docs mongolab to view documentation
 
 heroku config:set ROOT_URL="https://shopping-list-bryan.herokuapp.com"
+
+
+
+
+
+React
+JSX
+Meteor
+DDP
+Atmosphere.js
+MongoDB
+Robomongo
+react-router
+Heroku
+Git
+GitHub
+JavaScript ES6
+Mocha
+Node
+npm
+CSS/SCSS
+
+
+
+Meteor
+
+Meteor, or MeteorJS, is a free and open-source isomorphic JavaScript web framework written using Node.js. Meteor allows for rapid 
+prototyping and produces cross-platform code.
+
+Meteor allows 
+
+package meanings
+react-dom - package provides DOM-specific methods that can be used at the top level of your app and as an escape hatch to get outside of the 
+React model if you need to. 
+
+Tracker -  has a simple dependency tracking system which allows it to automatically rerun templates and other computations whenever Session variables, database queries,
+ and other data sources change.
+
+ session - Session provides a global object on the client that you can use to store an arbitrary set of key-value pairs. Use it to store things like the currently selected item in a list.
+
+ moment - Parse, validate, manipulate, and display dates and times in JavaScript.
+
+ api - application programming interface
+
