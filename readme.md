@@ -1,13 +1,17 @@
 # Shopping List App
 
-This is a shopping list application built on Meteor. 
+This is a shopping list application built on Meteor.
 
 Features that were implemented:
 
 CRUD operations
+
 user authentication
+
 add, edit, delete on each item
-test suite
+
+test suite using mocha
+
 heroku deployment
 
 ## Getting Started
@@ -34,12 +38,10 @@ npm test
 
 This application was created using the React framework. I have a moderate amount of experience with React
 
-
 ## Back end
 
 For the backend I used JavaScript and Meteor. I also used MongoDb for my database
 
 ## Description of the problem and solution.
 
-A problem I had was writing tests for my components and files because testing is a weak point of mine. To resolve the problem I decided to look up different methods of testing and decided which method of testing was most suitable. 
-
+A problem I had was writing tests for my components and files because testing is a weak point of mine. To resolve the problem I decided to look up different methods of testing and decided which method of testing was most suitable.
