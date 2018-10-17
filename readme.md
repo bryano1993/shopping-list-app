@@ -1,4 +1,4 @@
-# Notes App
+# Shopping List App
 
 This is a shopping list application built on Meteor 
 
