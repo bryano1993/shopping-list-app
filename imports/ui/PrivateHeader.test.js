@@ -1,23 +1,27 @@
-import { Meteor } from 'meteor/meteor';
-import React from 'react';
-import expect from 'expect';
-import { mount } from 'enzyme';
+import { Meteor } from "meteor/meteor";
+import React from "react";
+import expect from "expect";
+import { mount } from "enzyme";
 
-import { PrivateHeader } from './PrivateHeader';
+import { PrivateHeader } from "./PrivateHeader";
 
 if (Meteor.isClient) {
-  describe('PrivateHeader', function () {
-    it('should set button text to logout', function () {
-      const wrapper = mount( <PrivateHeader title="Test title" handleLogout={() => {}}/> )
-      const buttonText = wrapper.find('button').text();
+  describe("PrivateHeader", function() {
+    it("should set button text to logout", function() {
+      const wrapper = mount(
+        <PrivateHeader title="Test title" handleLogout={() => {}} />
+      );
+      const buttonText = wrapper.find("button").text();
 
-      expect(buttonText).toBe('Logout');
+      expect(buttonText).toBe("Logout");
     });
 
-    it('should use title prop as h1 text', function () {
-      const title = 'Test title here';
-      const wrapper = mount( <PrivateHeader title={title} handleLogout={() => {}}/> );
-      const actualTitle = wrapper.find('h1').text();
+    it("should use title prop as h1 text", function() {
+      const title = "Test title here";
+      const wrapper = mount(
+        <PrivateHeader title={title} handleLogout={() => {}} />
+      );
+      const actualTitle = wrapper.find("h1").text();
 
       expect(actualTitle).toBe(title);
     });
@@ -29,14 +33,15 @@ if (Meteor.isClient) {
     //   expect(spy).toHaveBeenCalledWith('Andrew');
     // });
 
-    it('should call handleLogout on click', function () {
+    //spy will be called when the button is clicked
+    //simulate takes event your trying to simulate
+    it("should call handleLogout on click", function() {
       const spy = expect.createSpy();
-      const wrapper = mount( <PrivateHeader title="Title" handleLogout={spy}/> );
+      const wrapper = mount(<PrivateHeader title="Title" handleLogout={spy} />);
 
-      wrapper.find('button').simulate('click');
+      wrapper.find("button").simulate("click");
 
       expect(spy).toHaveBeenCalled();
     });
-
   });
 }

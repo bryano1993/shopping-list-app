@@ -1,22 +1,33 @@
-import React from 'react';
-import { Accounts } from 'meteor/accounts-base';
-import { createContainer } from 'meteor/react-meteor-data';
-import { Session } from 'meteor/session';
+import React from "react";
+import { Accounts } from "meteor/accounts-base";
+import { createContainer } from "meteor/react-meteor-data";
+import { Session } from "meteor/session";
 
-export const PrivateHeader = (props) => {
-  const navImageSrc = props.isNavOpen ? '/images/x.svg' : '/images/bars.svg';
+//privateheader is a named export
+export const PrivateHeader = props => {
+  const navImageSrc = props.isNavOpen ? "/images/x.svg" : "/images/bars.svg";
 
   return (
     <div className="header">
       <div className="header__content">
-        <img className="header__nav-toggle" src={navImageSrc} onClick={props.handleNavToggle}/>
+        <img
+          className="header__nav-toggle"
+          src={navImageSrc}
+          onClick={props.handleNavToggle}
+        />
         <h1 className="header__title">{props.title}</h1>
-        <button className="button button--link-text" onClick={() => props.handleLogout()}>Logout</button>
+        <button
+          className="button button--link-text"
+          onClick={() => props.handleLogout()}
+        >
+          Logout
+        </button>
       </div>
     </div>
   );
 };
 
+//title and handlelot successfully rendered the application above
 PrivateHeader.propTypes = {
   title: React.PropTypes.string.isRequired,
   handleLogout: React.PropTypes.func.isRequired,
@@ -24,10 +35,13 @@ PrivateHeader.propTypes = {
   handleNavToggle: React.PropTypes.func.isRequired
 };
 
+//createContainer is used by anything privateHeader needs
+//PrivateHeader gets rendered to the screen
+
 export default createContainer(() => {
   return {
     handleLogout: () => Accounts.logout(),
-    handleNavToggle: () => Session.set('isNavOpen', !Session.get('isNavOpen')),
-    isNavOpen: Session.get('isNavOpen')
+    handleNavToggle: () => Session.set("isNavOpen", !Session.get("isNavOpen")),
+    isNavOpen: Session.get("isNavOpen")
   };
 }, PrivateHeader);

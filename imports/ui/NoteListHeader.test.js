@@ -1,42 +1,51 @@
-import React from 'react';
-import expect from 'expect';
-import { mount } from 'enzyme';
-import { Meteor } from 'meteor/meteor';
+import React from "react";
+import expect from "expect";
+import { mount } from "enzyme";
+import { Meteor } from "meteor/meteor";
 
-import { NoteListHeader } from './NoteListHeader';
-import { notes } from '../fixtures/fixtures';
+//file we are testing
+import { NoteListHeader } from "./NoteListHeader";
+import { notes } from "../fixtures/fixtures";
 
+//is rendered inside of NoteList
+//if on client  run test
 if (Meteor.isClient) {
-  describe('NoteListHeader', function () {
+  describe("NoteListHeader", function() {
     let meteorCall;
     let Session;
 
-    beforeEach(function () {
+    beforeEach(function() {
       meteorCall = expect.createSpy();
       Session = {
         set: expect.createSpy()
-      }
+      };
     });
 
-    it('should call meteorCall on click', function () {
-      const wrapper = mount(<NoteListHeader meteorCall={meteorCall} Session={Session}/>);
+    //test cases
+    //create spy and inject into notelistheader and simulate a click
 
-      wrapper.find('button').simulate('click');
+    it("should call meteorCall on click", function() {
+      const wrapper = mount(
+        <NoteListHeader meteorCall={meteorCall} Session={Session} />
+      );
+
+      wrapper.find("button").simulate("click");
       meteorCall.calls[0].arguments[1](undefined, notes[0]._id);
 
-      expect(meteorCall.calls[0].arguments[0]).toBe('notes.insert');
-      expect(Session.set).toHaveBeenCalledWith('selectedNoteId', notes[0]._id);
+      expect(meteorCall.calls[0].arguments[0]).toBe("notes.insert");
+      expect(Session.set).toHaveBeenCalledWith("selectedNoteId", notes[0]._id);
     });
 
-    it('should not set session for failed insert', function () {
-      const wrapper = mount(<NoteListHeader meteorCall={meteorCall} Session={Session}/>);
+    it("should not set session for failed insert", function() {
+      const wrapper = mount(
+        <NoteListHeader meteorCall={meteorCall} Session={Session} />
+      );
 
-      wrapper.find('button').simulate('click');
+      wrapper.find("button").simulate("click");
       meteorCall.calls[0].arguments[1]({}, undefined);
 
-      expect(meteorCall.calls[0].arguments[0]).toBe('notes.insert');
+      expect(meteorCall.calls[0].arguments[0]).toBe("notes.insert");
       expect(Session.set).toNotHaveBeenCalled();
     });
-
   });
 }

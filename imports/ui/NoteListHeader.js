@@ -1,18 +1,23 @@
-import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { createContainer } from 'meteor/react-meteor-data';
-import { Session } from 'meteor/session';
+import React from "react";
+import { Meteor } from "meteor/meteor";
+import { createContainer } from "meteor/react-meteor-data";
+import { Session } from "meteor/session";
 
-export const NoteListHeader = (props) => {
+export const NoteListHeader = props => {
   return (
     <div className="item-list__header">
-      <button className="button" onClick={() => {
-        props.meteorCall('notes.insert', (err, res) => {
-          if (res) {
-            props.Session.set('selectedNoteId', res);
-          }
-        });
-      }}>Create Note</button>
+      <button
+        className="button"
+        onClick={() => {
+          props.meteorCall("notes.insert", (err, res) => {
+            if (res) {
+              props.Session.set("selectedNoteId", res);
+            }
+          });
+        }}
+      >
+        Create Item
+      </button>
     </div>
   );
 };
@@ -24,7 +29,7 @@ NoteListHeader.propTypes = {
 
 export default createContainer(() => {
   return {
-    meteorCall: Meteor.call,
+    meteorCall: Meteor.call, //will be set to an imported Meteor.call and will have . Use for all methods we need to triger
     Session
   };
 }, NoteListHeader);

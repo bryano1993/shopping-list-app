@@ -1,0 +1,94 @@
+meteor both server and client
+collection of tools to work well together
+javascript on front side and nodejs for back side
+code resuability
+atmospherejs.com	meteor specific packages
+mongoDB
+
+
+
+
+server
+Node.js
+MongoDB (CRUD)
+
+
+Websockets (creates real-time data flow)
+
+
+
+Client
+client-side JavaScript
+React (user interaction, updated data)
+
+-------------------------------------------------------------------------------------
+meteor npm install 
+meteor to run 
+
+
+---------------------------------
+Server side with testing with  mocha in Meteor
+
+mocha for tests
+test driver
+get in atmospherejs
+
+To run our tests
+meteor test --driver-package=practicalmeteor:mocha
+
+    npm run test / npm test
+
+
+assertion library for writing tests
+expectjs
+meteor npm install expect@1.20.2 --save-dev
+
+
+remove note item
+update note item
+
+
+lots of tests for update method because it was very complex 
+
+testing publications just like methods have these traits
+    define them
+    isolate them
+    call them
+    then assert things to see what comes back 
+
+created a test suite 
+create and test methods 
+create and test publication 
+
+----------------------------------------
+
+Testing React 
+enzyme 
+meteor npm install --save-dev enzyme
+react-addons-test-utils
+
+spys are a way to mockout real functions
+
+react-addons-pure-render-mixin (used behind the scenes) in relation to testing
+
+    meteor add react-meteor-data    ===> connect function (takes redux's place)
+
+
+-----------------------------------------
+
+creation of the client
+    adding and counting the list
+
+
+meteor mongo
+    db.notes.remove({})
+    
+        will manually remove notes 
+
+--------------------------------
+
+editor component
+    -add input field and button
+---------------------------------
+
+refractor some code
