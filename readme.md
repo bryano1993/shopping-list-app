@@ -1,6 +1,6 @@
 # Notes App
 
-This is a notes application built on Meteor and created for my Udemy course.
+This is a shopping list application built on Meteor 
 
 ## Getting Started
 
